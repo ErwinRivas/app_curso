@@ -1,0 +1,29 @@
+{
+    "todos": [{
+        "titulo":"tarea 1",
+        "responsable": "Mark",
+        "prioridad": "baja"
+    },
+    {
+        "titulo":"tarea 2",
+        "responsable": "Julio",
+        "prioridad": "Alta"
+    },
+    {
+        "titulo":"tarea 3",
+        "responsable": "Miguel",
+        "prioridad": "media"
+    },
+    {
+        "titulo":"tarea 4",
+        "responsable": "Miguelito",
+        "prioridad": "alta"
+    },
+    {
+        "titulo":"tarea 5",
+        "responsable": "Angelica",
+        "prioridad": "baja"
+
+    }
+    ]
+}
