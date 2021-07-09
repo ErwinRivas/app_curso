@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { todos } from './todos.json'   
+import { todos } from './todos.json'
 import Formulario from './componentes/Formulario'
 import './index.css';
 
@@ -16,7 +16,7 @@ class App extends Component {
     }
 
     removeCharacter = (index) => {
-        const { todos } = this.state 
+        const { todos } = this.state
         this.setState({
             todos: todos.filter((todo, i) => {
                 return i !== index
@@ -42,7 +42,7 @@ class App extends Component {
                         <div className="card-footer">
                             <button className="btn btn-danger"
                                 onClick={this.removeCharacter.bind(this, i)}> BORRAR
-                                
+
                             </button>
                         </div>
                     </div>
