@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import DialogoConfirmacion from './DialogoConfirmacion'
+import { InputText } from 'primereact/inputtext';
 
 class Formulario extends Component {
   InitialState = {
     titulo: '',
     responsable: '',
     prioridad: 'low',
+    visible: false,
   }
   state = this.InitialState
 
@@ -15,22 +18,18 @@ class Formulario extends Component {
       [name]: value,
     })
   }
+  visibleDialog = (visible) => {
+    this.setState(visible)
+  }
 
   submitForm = () => {
     const { titulo, responsable } = this.state;
     let datoFalta = "";
     if (titulo == null || (titulo).length === 0 || /^\s*$/.test((titulo)) ||
       responsable == null || (responsable).length === 0 || /^\s*$/.test((responsable))) {
-      if (titulo.length === 0) {
-        datoFalta = "titulo"
-      }
-      if (responsable.length === 0) {
-        datoFalta = "responsable"
-      }
-      if (titulo.length === 0 && responsable.length === 0) {
-        datoFalta = "titulo y responsable"
-      }
-      alert("Por favor llene los campos requeridos falta el " + datoFalta)
+        this.setState({
+          visible:true
+        })
     } else {
       this.props.handleSubmitProps(this.state)  //le envio datos
       this.setState(this.InitialState)     //despues estado vuelve a inicial
@@ -38,9 +37,11 @@ class Formulario extends Component {
   }
 
   render() {
-    const { titulo, responsable, prioridad } = this.state;
+    const { titulo, responsable, prioridad,visible } = this.state;
     return (
+
       <div className="card">
+        <DialogoConfirmacion visible= {visible} visibleDialog = {this.visibleDialog} />
         <form className="card-body">
           <div className="form-group">
             <input

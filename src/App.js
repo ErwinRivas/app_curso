@@ -3,6 +3,14 @@ import { todos } from './todos.json'
 import Formulario from './componentes/Formulario'
 import './index.css';
 
+import 'primereact/resources/themes/saga-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+
+import { InputText } from 'primereact/inputtext'
+
+
+
 // shit alt f margen al codigo
 
 class App extends Component {
