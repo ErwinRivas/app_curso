@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { todos } from './todos.json'
 import Formulario from './componentes/Formulario'
-import './index.css';
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
+import {Link} from 'react-router-dom';
 
 import 'primereact/resources/themes/saga-blue/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
 
-import { InputText } from 'primereact/inputtext'
 
 
 
@@ -61,11 +63,15 @@ class App extends Component {
         return (
             <div className="App">
                 <nav className="navbar navbar-dark bg-dark">
-                    <a href="" className="text-white">TAREAS
+                    <a href="/#" className="text-white">TAREAS
                         <span className="span-css">
                             {this.state.todos.length}
                         </span>
                     </a>
+                </nav>
+                <nav>
+                    <Link to="/app_curso">Home</Link> <br />
+                    <Link to="/app_curso/paginanueva">Nueva Pagina</Link>
                 </nav>
                 <div className="container">
                     <div className="row mt-4">
@@ -80,7 +86,6 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-
         )   // props
     }
 }

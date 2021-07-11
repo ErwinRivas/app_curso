@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import DialogoConfirmacion from './DialogoConfirmacion'
-import { InputText } from 'primereact/inputtext';
+
 
 class Formulario extends Component {
   InitialState = {
     titulo: '',
     responsable: '',
-    prioridad: 'low',
+    prioridad: 'baja',
     visible: false,
   }
   state = this.InitialState
@@ -18,13 +18,13 @@ class Formulario extends Component {
       [name]: value,
     })
   }
-  visibleDialog = (visible) => {
-    this.setState(visible)
+  visibleDialog = (visibleDato) => {
+    this.setState({
+      visible:visibleDato})
   }
 
   submitForm = () => {
     const { titulo, responsable } = this.state;
-    let datoFalta = "";
     if (titulo == null || (titulo).length === 0 || /^\s*$/.test((titulo)) ||
       responsable == null || (responsable).length === 0 || /^\s*$/.test((responsable))) {
         this.setState({
@@ -70,9 +70,9 @@ class Formulario extends Component {
               value={prioridad}
               onChange={this.handleChange}
             >
-              <option>low</option>
-              <option>medium</option>
-              <option>high</option>
+              <option>baja</option>
+              <option>media</option>
+              <option>alta</option>
             </select>
           </div>
           <button type="button" className="btn btn-primary mt-4" value="Submit" onClick={this.submitForm}>

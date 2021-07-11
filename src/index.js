@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Rutas from './Rutas';
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(<Rutas />,document.getElementById('root'));
 
 
         //  que queremos pintar, donde 
