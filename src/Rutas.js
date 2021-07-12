@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Router, Switch, Route } from 'react-router-dom'
 import App from './App'
 import PageNueva from './pages/PageNueva'
 import NotFound from './componentes/NotFound'
